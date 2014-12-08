@@ -1,0 +1,30 @@
+// Install plugin
+
+#import 'lib.js'
+#import 'model/plugin.js'
+#import 'model/gitplugin.js'
+#import 'model/svnplugin.js'
+#import 'model/mercurialplugin.js'
+#import 'model/rawplugin.js'
+#import 'model/installer.js'
+
+(function(){
+  var jsonpath = net.khasegawa.currentPluginFolder() + "/Sketchbundle.json";
+
+  if (net.khasegawa.isNotExists(jsonpath)) {
+    net.khasegawa.alert("Sketchbundle.json is not found!", "Error!");
+    return;
+  }
+
+  var bundles = JSON.parse(NSString.stringWithContentsOfFile(jsonpath)),
+      installer = new net.khasegawa.SketchBundle.Installer(bundles),
+      lists = installer.update();
+
+  if (lists.successful.length > 0 || lists.failed.length > 0) {
+    net.khasegawa.alert(lists.successful.length + " bundles updated.\n" +
+                          lists.failed.length + " bundles update failed.",
+                        "Finished...");
+  } else {
+    net.khasegawa.alert('Bundles not found.', "Finished...");
+  }A
+})();
