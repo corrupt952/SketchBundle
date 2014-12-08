@@ -1,0 +1,15 @@
+{
+    "corrupt952/SketchBundle" : {
+        "name": "Test"
+    },
+    "corrupt952/SketchGit": {
+        "rev": "develop"
+    },
+    "https://bitbucket.org/corrupt952/MercurialTest": {
+        "type": "hg"
+    },
+    "https://raw.githubusercontent.com/corrupt952/SketchBundle/master/README.md" : {
+        "name": "README.markdown",
+        "type": "raw"
+    }
+}
