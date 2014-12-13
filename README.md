@@ -70,7 +70,7 @@ Specify the repositroy type. If omitted, a guess is made based on repo option.
 
 ```json
 {
-    "https://svn.khasegawa.net/chattool": {
+    "http://svn.example.com/repository": {
         "type": "svn"
     }
 }
